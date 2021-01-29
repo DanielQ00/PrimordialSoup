@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach this script to PauseMenu Canvas
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update

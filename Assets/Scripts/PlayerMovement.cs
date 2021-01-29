@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach script to main Player GameObject
 public class PlayerMovement : MonoBehaviour
 {
     CharacterController characterController;
