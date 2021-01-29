@@ -26,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        RotatePlayer();
+        if (!PauseMenu.isPaused)
+            RotatePlayer();
     }
     private void MovePlayer()
     {
