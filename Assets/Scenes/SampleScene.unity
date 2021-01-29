@@ -230,7 +230,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 33868912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543e7fbfd72f9f64496a48483be0b582, type: 3}
+  m_Script: {fileID: 11500000, guid: 12faf318980ce824191876451fd77ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 759435607}
@@ -416,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652225704}
   - component: {fileID: 652225705}
+  - component: {fileID: 652225706}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -430,7 +431,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652225703}
-  m_LocalRotation: {x: 0, y: -0.76334524, z: 0, w: 0.64599085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -438,7 +439,7 @@ Transform:
   - {fileID: 1345181510}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -99.52, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &652225705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,9 +449,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 652225703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf9670badba2d5488386f48d508b30a, type: 3}
+  m_Script: {fileID: 11500000, guid: 047a87c0a4abb5242a9ef79a28f1563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &652225706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652225703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d35c4e2c3108d4eb424fd29f7d71f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7291551788963614913, guid: b6cfbf13e2cc43b4980352b66e041ff9,
+    type: 3}
+  fireSpeed: 1
+  despawnTime: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
