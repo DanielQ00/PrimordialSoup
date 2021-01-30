@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     protected NavMeshAgent myNavMeshAgent;
     GameObject target;
     [SerializeField] float dist;
+    public float aggroDistance = 5;
 
     public State state { get; set; }
 
@@ -27,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     private void CheckDistance()
     {
         dist = Vector3.Distance(target.transform.position, transform.position);
-        if (dist <= 5 && dist>=2)
+        if (dist <= aggroDistance && dist>=2)
         {
             Chase();
         }
