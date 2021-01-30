@@ -43,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
     private void Chase()
     {
         state = State.Chasing;
+        myNavMeshAgent.isStopped = false;
         myNavMeshAgent.destination = target.transform.position;
 
     }
