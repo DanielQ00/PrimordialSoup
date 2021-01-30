@@ -12,11 +12,15 @@ public class Damage : MonoBehaviour
         StartCoroutine(target.GetComponent<Health>().TakeDamage(damage));
         yield break;
     }
-    private void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        if(gameObject.GetComponent<EnemyMovement>())
+        if(collision.gameObject.GetComponent<EnemyMovement>())
         {
-            target = FindObjectOfType<PlayerMovement>().gameObject;
+            target = collision.gameObject;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }
