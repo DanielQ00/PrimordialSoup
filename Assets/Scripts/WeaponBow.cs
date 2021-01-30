@@ -5,23 +5,24 @@ using UnityEngine;
 
 public class WeaponBow : MonoBehaviour
 {
-    
-    public GameObject projectile; // To be attached to bow's projectile GameObject
 
+    public GameObject projectile; // To be attached to bow's projectile GameObject
+    private GameObject firingPoint;
     public float fireSpeed = 0.5f;
     public float projectileSpeed = 7.0f;
     public float despawnTime = 5.0f;
-    private bool canFire = true;
+    [SerializeField] bool canFire = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        firingPoint = transform.GetChild(2).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2") && canFire)
+        if (Input.GetMouseButtonDown(0) && canFire)
         {
             FireBow();
             StartCoroutine(Reload());
@@ -31,10 +32,10 @@ public class WeaponBow : MonoBehaviour
     void FireBow()
     {
         canFire = false;
-        GameObject projectileClone = Instantiate(projectile, transform.position, transform.rotation);
+        GameObject projectileClone = Instantiate(projectile, firingPoint.transform.position, transform.rotation);
         Rigidbody rbody = projectileClone.GetComponent<Rigidbody>();
 
-        rbody.velocity = rbody.transform.forward * projectileSpeed;
+        rbody.velocity = transform.forward * projectileSpeed;
 
         // Destroy arrow 5 seconds after firing
         Destroy(projectileClone, 5);
