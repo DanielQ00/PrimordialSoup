@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRJD : MonoBehaviour
 {
-
+    //public Animator playerAnim;
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBarRJD healthBar;
@@ -25,5 +25,23 @@ public class PlayerRJD : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        if(currentHealth <= 0)
+        {
+            PlayerDeath();
+        }
+        void PlayerDeath()
+        {
+            Debug.Log("Player died!");
+            //death animation
+            //Animator.SetBool("IsDead", true);
+
+            GetComponent<Collider>().enabled = false;
+            this.enabled = false;
+
+
+            //disable enemy
+        }
     }
+    
 }
