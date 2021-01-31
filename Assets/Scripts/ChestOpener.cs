@@ -9,8 +9,8 @@ public class ChestOpener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coll = GetComponentInChildren<BoxCollider>();
         a = GetComponent<Animator>();
+        coll = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -19,9 +19,14 @@ public class ChestOpener : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider c)
     {
-        Debug.Log("Chest opening");
-        a.SetTrigger("OpenChest");
+        Debug.Log("Collision");
+        if (c.tag == "Player")
+        {
+            
+            a.SetTrigger("OpenChest");
+        }
+        
     }
 }
