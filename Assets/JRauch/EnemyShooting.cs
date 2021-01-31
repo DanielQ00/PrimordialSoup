@@ -7,7 +7,6 @@ public class EnemyShooting : MonoBehaviour
 {
     public enum State { Idle, Shooting };
     protected State curState;
-    //protected NavMeshAgent myNavMeshAgent;
     GameObject target;
     [SerializeField] float dist;
     public float aggroDistance = 5;
@@ -25,7 +24,6 @@ public class EnemyShooting : MonoBehaviour
 
     private void Start()
     {
-        //myNavMeshAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindObjectOfType<PlayerMovement>().gameObject;
         firingPoint = transform.GetChild(2).gameObject;
     }
@@ -53,9 +51,6 @@ public class EnemyShooting : MonoBehaviour
     private void Shoot()
     {
         state = State.Shooting;
-        //myNavMeshAgent.isStopped = false;
-        //myNavMeshAgent.rotation = target.transform.position;
-        
 
         canFire = false;
         GameObject projectileClone = Instantiate(projectile, firingPoint.transform.position, transform.rotation);
@@ -72,17 +67,5 @@ public class EnemyShooting : MonoBehaviour
         yield return new WaitForSeconds(fireSpeed);
         canFire = true;
     }
-
-    /*private void RotateEnemy()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-
-        if (groundPlane.Raycast(ray, out float rayLength))
-        {
-            Vector3 pointToLook = ray.GetPoint(rayLength);
-
-            
-        }*/
 
     }
