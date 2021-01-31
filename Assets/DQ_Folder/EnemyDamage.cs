@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    GameObject target;
-    [SerializeField] int attackDamage;
+    public GameObject target;
+    [SerializeField] int attackDamage = 10;
     bool isInside;
 
 
@@ -13,8 +13,8 @@ public class EnemyDamage : MonoBehaviour
     {
         while (isInside)
         {
-            StartCoroutine(target.GetComponent<Health>().TakeDamage(damage));
-            //Debug.Log("Damage Dealt");
+            target.GetComponent<PlayerRJD>().TakeDamage(damage);
+            Debug.Log("Damage Dealt");
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -25,9 +25,10 @@ public class EnemyDamage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("EnterCollider");
+        Debug.Log("EnterCollider");
         if (other.gameObject.GetComponent<PlayerMovement>())
         {
+            target = other.gameObject;
             isInside = true;
         }
         StartCoroutine("DealDamage", attackDamage);
