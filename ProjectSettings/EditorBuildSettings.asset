@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RJDAssets/Scenes/MainMenu.unity
     guid: 7dc50c4a8e170104ea603bbe78933a96
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/JRauch/Level1_Forest 1.unity
-    guid: 045a01a17202f714cb8bf0179891f95e
+    path: Assets/JRauch/Level1_Forest.unity
+    guid: 0147fbc46e3c8874d899080e04e21adc
   m_configObjects: {}
