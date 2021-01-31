@@ -660,6 +660,7 @@ GameObject:
   - component: {fileID: 1376296297187544590}
   - component: {fileID: 2629763869001633844}
   - component: {fileID: 4165382645980883711}
+  - component: {fileID: 655464920446429568}
   m_Layer: 8
   m_Name: Scorpion_Melee_Scripted
   m_TagString: Untagged
@@ -820,7 +821,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58377e0a4ec8264899b1a717206351e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   attackDamage: 0
+--- !u!65 &655464920446429568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294865354100011740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9406796, y: 4.2563076, z: 6.1690407}
+  m_Center: {x: -0.1418236, y: 1.6281538, z: 0.17620851}
 --- !u!1 &2451977141096008713
 GameObject:
   m_ObjectHideFlags: 0
