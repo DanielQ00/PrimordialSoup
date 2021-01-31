@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRJD : MonoBehaviour
+public class EnemyHealthRJD : MonoBehaviour
 {
-    //public Animator playerAnim;
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBarRJD healthBar;
+    //public animator enemyanim;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +18,23 @@ public class PlayerRJD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+
+        //animator.SetTrigger("Hurt");
         healthBar.SetHealth(currentHealth);
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            PlayerDeath();
+            Die();
         }
-        void PlayerDeath()
+        void Die()
         {
-            Debug.Log("Player died!");
+            Debug.Log("Enemy died!");
             //death animation
             //Animator.SetBool("IsDead", true);
 
@@ -43,5 +45,4 @@ public class PlayerRJD : MonoBehaviour
             //disable enemy
         }
     }
-    
 }
