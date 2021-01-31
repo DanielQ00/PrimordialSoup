@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ProjectileManagment : MonoBehaviour
 {
-    public int damage =25;
+    public int damage = 25;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<EnemyHealthRJD>())
         {
             Debug.Log("Sending Damage");
+            Debug.Log(collision.gameObject.name);
             collision.gameObject.GetComponent<EnemyHealthRJD>().TakeDamage(damage);
         }
         else
