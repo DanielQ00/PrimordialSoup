@@ -6,11 +6,12 @@ public class SwordAnim : MonoBehaviour
 {
     public float attackSpeed = 0.3f;
     private float lastSwing = 0f;
+    private Animator a;
 
     // Start is called before the first frame update
     void Start()
     {
-        Animator a = GetComponentInChildren<Animator>();
+         a = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
